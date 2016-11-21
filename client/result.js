@@ -1,9 +1,17 @@
+var cookies = new Cookies()
+
+
 Template.Result.onCreated(function(){
     var self = this;
     self.autorun(function(){
         self.subscribe('voteyes');
         self.subscribe('voteno');
     });
+
+    if (cookies.get('voted') != 'y'){
+      console.log('BackHOME')
+      FlowRouter.go('home');
+    }
 
 });
 
@@ -20,11 +28,11 @@ Template.Result.helpers({
 	},
 	perc_yes:function(){
 		var tot = 100* (Counts.get('voteyes')/(Counts.get('voteno') +Counts.get('voteyes')));
-		return tot;
+		return tot.toFixed(2);;
 	},
 	perc_no:function(){
 		var tot = 100* ( Counts.get('voteno')/(Counts.get('voteno') +Counts.get('voteyes')));
 
-		return tot;
+		return tot.toFixed(2);;
 	},
 })

@@ -1,8 +1,8 @@
 <template name="Question">
             {{#if resultvisible }}
-            	<div class="vote-result">
-            	   	<h1><a href="/result">RISULTATI</a></h1>
-            	</div>
+            <a href="/result" target="_self">	<div class="vote-result">
+            	   	<h1>RISULTATI</h1>
+            	</div></a>
              {{else}}
 	            <div class="main-container">
 	                <div class="left-pane">
@@ -11,6 +11,6 @@
 	                <div class="right-pane">
 	                    <button class="vote-button btn-no">NO</button>
 	                </div>
-	            </div> 
+	            </div>
             {{/if}}
-</template>            
+</template>
