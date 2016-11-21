@@ -1,0 +1,16 @@
+<template name="Question">
+            {{#if resultvisible }}
+            	<div class="vote-result">
+            	   	<h1><a href="/result">RISULTATI</a></h1>
+            	</div>
+             {{else}}
+	            <div class="main-container">
+	                <div class="left-pane">
+	                    <button class="vote-button btn-yes">SI</button>
+	                </div>
+	                <div class="right-pane">
+	                    <button class="vote-button btn-no">NO</button>
+	                </div>
+	            </div> 
+            {{/if}}
+</template>            
