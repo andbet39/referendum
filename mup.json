@@ -1,0 +1,43 @@
+{
+  servers: {
+    one: {
+      host: '193.70.37.67',
+      username: 'root',
+       password:'isp8EeJu'
+    }
+  },
+  setupMongo: true,
+  setupNode: true,
+  nodeVersion: "0.10.36",
+  setupPhantom: true,
+  enableUploadProgressBar: true,
+
+
+
+  meteor: {
+    name: 'referendum',
+    path: '../referendum',
+    servers: {
+      one: {}
+    },
+    buildOptions: {
+      serverOnly: true
+    },
+    env: {
+      ROOT_URL: 'cosavoto.online',
+      MONGO_URL: 'mongodb://localhost/meteor'
+    },
+
+    //dockerImage: 'kadirahq/meteord'
+    deployCheckWaitTime: 60
+
+  },
+
+  mongo: {
+    oplog: true,
+    port: 27017,
+    servers: {
+      one: {}
+    }
+  }
+};
